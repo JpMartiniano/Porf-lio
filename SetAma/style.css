@@ -1,0 +1,299 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+#main-header {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background: #fdd835 no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+    color: #000000;
+}
+
+.header-content h1 {
+    font-size: 4rem;
+}
+
+.typing-effect {
+    font-size: 1.7rem;
+    margin-top: 20px;
+    min-height: 40px;
+    color: #000;
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Garante que a navbar comece no extremo esquerdo */
+    width: 100%;
+    background: #FFD700; /* Fundo amarelo */
+    padding: 10px 0; /* Remove padding lateral */
+    display: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* #navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+} */
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove padding */
+}
+
+/* #navbar ul li {
+    margin: 0 15px;
+} */
+
+#navbar ul li {
+    margin: 0 15px; /* Espaçamento horizontal entre os itens */
+}
+
+/* #navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+} */
+
+#navbar ul li a {
+    text-decoration: none;
+    color: #000; /* Texto preto */
+    font-weight: 600;
+    font-size: 1rem; /* Ajuste conforme necessário */
+}
+
+#navbar ul li a:hover {
+    color: #333; /* Cinza escuro */
+}
+
+/* Mostrar navbar quando rolar */
+.scrolled #navbar {
+    display: block;
+}
+
+/* Ajuste para evitar que o conteúdo seja coberto pela navbar */
+body.scrolled main {
+    margin-top: 60px; /* Ajuste conforme a altura da navbar */
+}
+
+/* Seções */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section ul {
+    list-style: disc inside;
+}
+
+section ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Vídeo */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Jogo */
+#quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.question {
+    margin-bottom: 30px;
+}
+
+.question h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+}
+
+.option {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.option.correct {
+    background-color: #c8e6c9; /* Verde claro */
+}
+
+.option.incorrect {
+    background-color: #ffcdd2; /* Vermelho claro */
+}
+
+.option:hover {
+    background-color: #e0e0e0;
+}
+
+/* Modal */
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-content {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#close-modal {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ffeb3b;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#close-modal:hover {
+    background: #fdd835;
+}
+/* Footer */
+footer {
+    background-color: #fdd835;
+    color: #000000;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #000; /* Texto preto */
+    font-weight: 300;
+    font-size: 1rem; /* Ajuste conforme necessário */
+}
+
+footer a {
+
+    text-decoration: none;
+    color: #000; /* Texto preto */
+    font-weight: 300;
+    font-size: 1rem; /* Ajuste conforme necessário */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .typing-effect {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes na navbar para dispositivos móveis */
+    #navbar ul {
+        flex-direction: row; /* Mantém os itens em linha */
+        flex-wrap: wrap; /* Permite quebra de linha */
+        justify-content: center;
+    }
+
+    #navbar ul li {
+        margin: 5px 10px; /* Reduz o espaçamento entre os itens */
+    }
+
+    #navbar ul li a {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte */
+        padding: 5px; /* Ajusta o padding dos links */
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.social-icon {
+    color: #000000; /* Cor do ícone */
+    font-size: 1rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0e76a8; /* Cor do LinkedIn ao passar o mouse (Azul LinkedIn) */
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 5px;
+    }
+
+    .social-icon {
+        font-size: 1.2rem;
+        margin: 0 5px;
+    }
+}
